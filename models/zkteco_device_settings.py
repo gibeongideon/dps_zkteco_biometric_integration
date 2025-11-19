@@ -212,6 +212,27 @@ class ZktecoDeviceSetting(models.Model):
                 f"An unexpected error occurred while connecting to the device: {connection_exception}"
             ))
 
+    # Customized by Tunn
+    # Function to remove accents + remove spaces (prepare username for ZKTeco)
+    def _clean_username(self, text):
+        """
+        Convert Vietnamese accented text into ASCII (no accents) and remove spaces.
+        """
+        if not text:
+            return ''
+
+        # Remove accents
+        text = unicodedata.normalize('NFKD', text)
+        text = ''.join([c for c in text if not unicodedata.combining(c)])
+
+        # Remove all spaces
+        text = re.sub(r'\s+', '', text)
+
+        # Optional: convert to uppercase to avoid lỗi trên thiết bị
+        text = text.upper()
+
+        return text
+
     def action_synchronize_employees(self):
 
         max_uid = 0
@@ -283,8 +304,15 @@ class ZktecoDeviceSetting(models.Model):
                         'device_id': self.id,
                     })]
 
+                    # Customized By Tunn
+                    clean_name = self._clean_username(employee.name)
                     zk_device.set_user(
-                        max_uid, employee.name, 0, '', '', str(next_user_id_str)
+                        max_uid,
+                        clean_name,
+                        0,
+                        '',
+                        '',
+                        str(next_user_id_str)
                     )
 
                     next_user_id_str = generate_next_user_id(next_user_id_str)
