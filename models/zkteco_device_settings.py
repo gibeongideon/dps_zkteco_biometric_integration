@@ -6,6 +6,7 @@
 ########################################################
 
 import base64
+import unicodedata
 from odoo import api, fields, models, _
 from collections import defaultdict
 from odoo.addons.base.models.res_partner import _tz_get
