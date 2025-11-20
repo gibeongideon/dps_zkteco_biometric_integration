@@ -82,6 +82,7 @@
         'views/hr_attendance_view.xml',
         'views/hr_employee_view.xml',
         'views/resource_calendar_attendance_view.xml',
+        'views/device_user_views.xml',
 
         'views/menus.xml',
     ],

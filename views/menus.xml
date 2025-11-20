@@ -54,6 +54,13 @@
               parent="menu_zkteco_device_settings"
               sequence="2"
               groups="hr_attendance.group_hr_attendance_manager"/>
+    <!-- Child menu for Attendance State Configuration -->
+    <menuitem id="menu_zkteco_attendance_device_users"
+              name="Device Users"
+              action="action_zkteco_device_users"
+              parent="menu_zkteco_device_settings"
+              sequence="3"
+              groups="hr_attendance.group_hr_attendance_manager"/>
 
     <!-- ================= Sync Menu ================= -->
     <!-- Parent menu for synchronization actions -->
