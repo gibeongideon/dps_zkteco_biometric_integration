@@ -30,6 +30,7 @@
         groups="hr_attendance.group_hr_attendance_manager"/>
     -->
 
+    
     <!-- ✅ FIXED -->
     <menuitem id="dashboard_dashoard_custom_menu"
               name="Dashboard"
