@@ -41,7 +41,7 @@
 
     <!-- Child menu for Device Configuration -->
     <menuitem id="menu_zkteco_device_configuration"
-              name="Device Configuration"
+              name="Device ConfigurationS"
               action="action_zkteco_device_settings_view"
               parent="menu_zkteco_device_settings"
               sequence="1"
