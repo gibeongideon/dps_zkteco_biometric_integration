@@ -9,13 +9,13 @@
 
     <!-- ================= Logs Menu (First Priority) ================= -->
     <!-- Parent menu for viewing all ZKTeco device logs -->
-    <!-- <menuitem
+    <menuitem
         id="dashboard_dashoard_custom_menu"
         name="Dashboard"
         parent="hr_attendance.menu_hr_attendance_root"
         action="action_zkteco_dashboard_dashboard_custom"
         sequence="3"
-        groups="hr_attendance.group_hr_attendance_manager"/>         -->
+        groups="hr_attendance.group_hr_attendance_manager"/>        
 
     <menuitem id="menu_zkteco_attendance_logs_main"
               name="Device Logs"
